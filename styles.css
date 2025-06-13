@@ -53,6 +53,13 @@ button:hover {
   justify-content: center;
 }
 
+.flexCenterRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .halfWidth {
   width: 50%;
 }
