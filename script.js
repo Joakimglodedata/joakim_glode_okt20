@@ -27,9 +27,11 @@ displayItems.textContent = fruitBowl.join(", ")
 
 
 restart.addEventListener("click", function () {
-    const shoppingItemValue = shoppingItem.value
     while (fruitBowl.length > 0) {
         fruitBowl.pop()
+        cons(fruitBowl.length)
+        displayItems.textContent = fruitBowl.join(", ")
+        displayEmptyF ()
     }
 })
 
