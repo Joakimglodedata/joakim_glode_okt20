@@ -75,6 +75,11 @@ shiftB.addEventListener("click", function () {
     displayEmptyF ()
 })
 
+
+//
+// 
+
+
 // Med å ta vekk form funksjoner tok eg også vekk evnen til å presse enter, gjør det samme som push knappen men blir aktivert av å presse enter
 // Blir aktivert av kvart knappetrykk, sjekker om trykket var enter og om textfeltet er i bruk før den endrer noe
 document.addEventListener('keydown', function(event) {
@@ -157,13 +162,13 @@ function selectorHighlighter () {
 
 
 // gjør testing lettare 
-shoppingList.push("Melk")
-shoppingList.push("Appelsin juice")
-shoppingList.push("Appelsin")
-// shoppingList.push("Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia alias nesciunt labore eveniet qui necessitatibus eius eligendi velit! Delectus tempore, numquam dolores eveniet minus repudiandae tempora laudantium repellendus in maiores.")
-shoppingList.push("Eg elsker banana")
-shoppingList.push("Banana")
-shoppingList.push("Banana")
+// shoppingList.push("Melk")
+// shoppingList.push("Appelsin juice")
+// shoppingList.push("Appelsin")
+// // shoppingList.push("Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia alias nesciunt labore eveniet qui necessitatibus eius eligendi velit! Delectus tempore, numquam dolores eveniet minus repudiandae tempora laudantium repellendus in maiores.")
+// // shoppingList.push("Eg elsker banan")
+// shoppingList.push("Banan")
+// shoppingList.push("Banan")
 
-displayEmptyF ()
+// displayEmptyF ()
 // selectorHighlighter ()
