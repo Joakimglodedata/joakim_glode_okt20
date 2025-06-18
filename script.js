@@ -8,7 +8,7 @@ sel("#form").addEventListener('submit', function (e) {
     e.preventDefault()});
 
 const shoppingList = []
-cons(shoppingList.length)
+// cons(shoppingList.length)
 
 
 //Setter opp konstanter for html elementer med id
@@ -31,7 +31,7 @@ restart.addEventListener("click", function () {
 // Har ingen failsafe for å hindre uendelige loops, men ser ikkje korleis det kan hende her så bare håper eg har rett :)
     while (shoppingList.length > 0) {
         shoppingList.pop()
-        cons(shoppingList.length)
+        // cons(shoppingList.length)
         displayEmptyF ()
     }
 })
@@ -44,8 +44,8 @@ restart.addEventListener("click", function () {
 // Neste 4 knappene fungerer ganske likt så forklarer kun denne. 
 pushB.addEventListener("click", function () { // Eventlistener som lytter etter klikk på elementet før det kjører ein funksjon
     const shoppingItemValue = shoppingItem.value
-    // Kjører kun om shoppingItem har verdi i seg
-    if (shoppingItemValue) {
+    // Kjører kun om shoppingItem har verdi i seg som har annet en mellomrom i seg
+    if (shoppingItem.value.trim().length > 0) {
         shoppingList.push(shoppingItemValue) // Dytter ShoppingItem verdien inn i ShoppingList arrayen
         shoppingItem.value = "" // Reseter verdien til Shoppingitem
         displayEmptyF () // Kjører ein funksjon ansvarlig for display oppdatering
@@ -61,7 +61,7 @@ popB.addEventListener("click", function () {
 
 unshiftB.addEventListener("click", function () {
     const shoppingItemValue = shoppingItem.value
-    if (shoppingItemValue) {
+    if (shoppingItem.value.trim().length > 0) {
         shoppingList.unshift(shoppingItemValue)
         shoppingItem.value = ""
         displayEmptyF ()
@@ -75,17 +75,12 @@ shiftB.addEventListener("click", function () {
     displayEmptyF ()
 })
 
-
-//
-// 
-
-
 // Med å ta vekk form funksjoner tok eg også vekk evnen til å presse enter, gjør det samme som push knappen men blir aktivert av å presse enter
 // Blir aktivert av kvart knappetrykk, sjekker om trykket var enter og om textfeltet er i bruk før den endrer noe
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter' && document.activeElement === shoppingItem) {
         const shoppingItemValue = shoppingItem.value
-        if (shoppingItemValue) {
+        if (shoppingItem.value.trim().length > 0) {
             shoppingList.push(shoppingItemValue)
             shoppingItem.value = ""
             displayEmptyF ()
@@ -128,7 +123,7 @@ down.addEventListener("click", function () {
     if (!sel(".highlighted")) {
         selectorId = 0 // Setter Id så det samsvarer med første elementet i shoppingList
         selectorHighlighter ()
-    } else if (selectorId < shoppingList.length - 1) { // Kjører kun om Id er 
+    } else if (selectorId < shoppingList.length - 1) { // Kjører kun om Id er lavere en tilsvarende max verdien for shoppingList id
         selectorId++
         selectorHighlighter ()
     }
@@ -155,7 +150,7 @@ function selectorHighlighter () {
         `<span class="highlighted">${shoppingList[selectorId]}</span>` // highlighted classen på <span> er det som gjør at vi kan sjå teksten som selectorId samsvarer med
         );
         displayItems.innerHTML = wrappedText; // Eit stort problem med denne løsningen er at den highlighter den første tilsvarende teksten, ikkje nødvendigvis teksten som faktisk blir sletta i arrayen
-        // Ein mye bedre løsning ville vore å bruke .forEach eller loop for å lage eit nytt element for kvar indeks i arrayen istedet for eit tekst element, men eg likte utfordringen av å lage ein highilghter for ein blokk av tekst siden det var eit nytt problem å løse
+        // Ein mye bedre løsning ville vore å bruke .forEach eller loop for å lage eit nytt element for kvar indeks i arrayen, men eg likte utfordringen av å lage ein highilghter for ein blokk av tekst siden det var eit nytt problem å løse
 
 }
 
@@ -165,10 +160,10 @@ function selectorHighlighter () {
 // shoppingList.push("Melk")
 // shoppingList.push("Appelsin juice")
 // shoppingList.push("Appelsin")
-// // shoppingList.push("Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia alias nesciunt labore eveniet qui necessitatibus eius eligendi velit! Delectus tempore, numquam dolores eveniet minus repudiandae tempora laudantium repellendus in maiores.")
-// // shoppingList.push("Eg elsker banan")
+// shoppingList.push("Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia alias nesciunt labore eveniet qui necessitatibus eius eligendi velit! Delectus tempore, numquam dolores eveniet minus repudiandae tempora laudantium repellendus in maiores.")
 // shoppingList.push("Banan")
+// shoppingList.push("Eg elsker banan")
 // shoppingList.push("Banan")
 
-// displayEmptyF ()
+displayEmptyF ()
 // selectorHighlighter ()
