@@ -14,22 +14,35 @@
   <body>
     <header>
     </header>
-    <main class="flexCenterRow">
-      <section>
-        <button id="restart">Restart</button>
-        <form id="form">
+    <main class="flexCenterColumn">
+      <section class="flexCenterColumn heroSection">
+        <div>
+          <button id="restart">Restart</button>
+        </div>
+        <div>
+          <form id="form">
           <label for="shoppingItem">
-            varer til handlelisten
+            Varer til handlelisten <br>
             <input type="text" name="shoppingItem" id="shoppingItem" value="Test" placeholder="Skriv ein vare.."> 
           </label>
-        </form>
-        <button id="pushB">Push</button>
-        <button id="popB">Pop</button>
-        <button id="unshiftB">Unshift</button>
-        <button id="shiftB">Shift</button>
-
-        <p id="displayItems"> <!-- Får innhold fra JS --> </p>
-        <p id="displayEmpty">Listen er tom</p>
+          </form>
+        </div>
+        <div>
+          <button id="pushB">Push</button>
+          <button id="popB">Pop</button>
+          <button id="unshiftB">Unshift</button>
+          <button id="shiftB">Shift</button>
+        </div>
+        <div class="flexCenterColumn selector">
+          Utvelger
+          <button id="up">^</button>
+          <button id="deleter">X</button>
+          <button id="down" class="rotate">^</button>
+        </div>
+        <div id="displayContainer">
+          <p id="displayItems"> <!-- Får innhold fra JS --> </p>
+          <p id="displayEmpty">Listen er tom</p>
+        </div>
       </section>
       <section></section>
       <section></section>
